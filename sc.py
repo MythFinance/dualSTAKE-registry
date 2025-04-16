@@ -131,7 +131,7 @@ def log_dualstake_listings(app_ids: abi.DynamicArray[abi.Uint64]):
         InnerTxnBuilder.ExecuteMethodCall(
             app_id=app_id.get(),
             args=[],
-            method_signature="get_contract_listing()(uint64,uint64,uint64,uint64,uint64,string,uint64,string,string,uint16,bool,bool,bool,uint64)",
+            method_signature="get_contract_listing()(uint64,uint64,uint64,uint64,uint64,string,uint64,string,string,uint16,bool,bool,bool,bool,uint64)",
         ),
         logline.store(InnerTxn.last_log()),
         Log(Extract(logline.load(), Int(4), Len(logline.load()) - Int(4))),
